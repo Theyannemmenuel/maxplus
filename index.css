@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #1a1a1a;
+    background: #c16161;
     overflow: hidden;
     height: 100vh;
     display: flex;
@@ -75,6 +75,14 @@ body {
     justify-content: center;
     position: relative;
     margin-bottom: 1rem;
+}
+
+
+
+.logo-circle img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
 }
 
 .tiger-icon {
@@ -442,7 +450,7 @@ body {
 /* Exercise Detail */
 .exercise-hero {
     width: 100%;
-    height: 280px;
+    height: 409px;
     object-fit: cover;
     margin-bottom: 1.5rem;
 }
@@ -482,3 +490,563 @@ body {
     scrollbar-width: none;
 }
 
+
+
+
+
+
+
+
+
+/* Header */
+.exercise-header {
+    padding: 3rem 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    position: relative;
+    z-index: 10;
+}
+
+.back-btn {
+    background: rgba(255, 215, 0, 0.2);
+    border: none;
+    color: #ffd700;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.exercise-title {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Video Section */
+.video-container {
+    flex: 1;
+    position: relative;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+}
+
+/* Timer Display */
+.timer-display {
+    text-align: center;
+}
+
+.timer-label {
+    color: #ffd700;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timer-value {
+    color: white;
+    font-size: 72px;
+    font-weight: bold;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    line-height: 1;
+}
+
+/* Exercise Info */
+.exercise-info {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-label {
+    color: #999;
+    font-size: 11px;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+}
+
+.info-value {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Controls Section */
+.controls-section {
+    padding: 2rem 1.5rem;
+    background: #000;
+}
+
+.exercise-name {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.exercise-details {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-bottom: 1.5rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.progress-text {
+    color: #999;
+    font-size: 12px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #333;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #ffd700;
+    border-radius: 3px;
+    transition: width 1s linear;
+}
+
+/* Control Buttons */
+.control-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.play-pause-btn {
+    background: #ffd700;
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 28px;
+    color: #000;
+    transition: transform 0.2s;
+}
+
+.play-pause-btn:active {
+    transform: scale(0.95);
+}
+
+.secondary-btn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 1rem;
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Rest Screen */
+.rest-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.95);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 2rem;
+}
+
+.rest-screen.active {
+    display: flex;
+}
+
+.rest-title {
+    color: #ffd700;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.rest-timer {
+    color: white;
+    font-size: 120px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.next-exercise {
+    color: #999;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.next-exercise-name {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.skip-rest-btn {
+    margin-top: 3rem;
+    background: transparent;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Completed Screen */
+.completed-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 2rem;
+}
+
+.completed-screen.active {
+    display: flex;
+}
+
+.trophy-icon {
+    font-size: 100px;
+    color: #ffd700;
+    margin-bottom: 2rem;
+    animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.completed-title {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.completed-subtitle {
+    color: #999;
+    font-size: 16px;
+    margin-bottom: 3rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.stat-value {
+    color: #ffd700;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #999;
+    font-size: 14px;
+}
+
+.btn-yellow {
+    background: #ffd700;
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Progress Steps */
+.signup-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+}
+
+.progress-step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active {
+    background: #ffd700;
+    color: #000;
+}
+
+.progress-step.completed {
+    background: #50c878;
+    color: white;
+}
+
+.progress-line {
+    flex: 1;
+    height: 3px;
+    background: #333;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+}
+
+.progress-line.active {
+    background: #ffd700;
+}
+
+/* Form Row for 2 columns */
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-col {
+    flex: 1;
+}
+
+/* Form Select */
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Goal Selector */
+.goal-selector {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.goal-option {
+    cursor: pointer;
+}
+
+.goal-option input[type="radio"] {
+    display: none;
+}
+
+.goal-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.goal-card i {
+    font-size: 24px;
+    color: #ffd700;
+}
+
+.goal-card span {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.goal-option input[type="radio"]:checked + .goal-card {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: #ffd700;
+    transform: scale(1.02);
+}
+
+.goal-card:hover {
+    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background: transparent;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .goal-selector {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 400px) {
+    .goal-selector {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .goal-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25rem;
+    }
+    
+    .goal-card i {
+        font-size: 32px;
+    }
+    
+    .goal-card span {
+        font-size: 14px;
+    }
+}
