@@ -9,71 +9,115 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="phone-container">
-        <div class="notch"></div>
-        
-        <!-- Splash Screen -->
-        <div id="splash" class="screen active">
-            <div class="splash-content">
-                <div class="logo-circle">
-                   <img src="images/logo.png" alt="">
+    <div class="app-wrapper">
+        <div class="phone-container">
+            <div class="notch"></div>
+            
+            <!-- Splash Screen -->
+            <div id="splash" class="screen active">
+                <div class="splash-content">
+                    <div class="logo-circle">
+                       <img src="images/logo.png" alt="MaxTraining Logo">
+                    </div>
+                    <h1 class="logo-text">
+                        MAX TRAINING 
+                        <span class="plus-text">+</span>
+                    </h1> 
+                    <p class="by-text">By Maxtraining</p>
                 </div>
-                <h1 class="logo-text">
-                    MAX TRAINING 
-                    <span style="font-size: 35px; font-weight: bold; color: yellow;"> + </span>
-                </h1> 
-                <p class="by-text">By Maxtraining</p>
             </div>
-        </div>
-        
-        <!-- Welcome Screen -->
-        <div id="welcome" class="screen">
-            <div class="screen-content" style="padding: 0;">
-                <div style="position: relative;">
-                    <img src="images/IMG_2751.png" class="hero-image" alt="Training">
-                    <div class="hero-overlay"></div>
+            
+            <!-- Welcome Screen -->
+            <div id="welcome" class="screen">
+                <div class="screen-content" style="padding: 0;">
+                    <div style="position: relative;">
+                        <img src="images/IMG_2751.png" class="hero-image" alt="Training">
+                        <div class="hero-overlay"></div>
+                    </div>
+                    <div style="padding: 1.5rem; margin-top: -33px;">
+                        <h2 class="text-white" style="font-size: 28px; font-weight: bold; margin-bottom: 0.5rem;">TON SUIVI PERSO</h2>
+                        <h2 class="text-white" style="font-size: 28px; font-weight: bold; margin-bottom: 1rem;">EN UNE SEULE APP.</h2>
+                        <p class="text-gray" style="margin-bottom: 1.5rem;">Suis ton évolution et atteints les objectifs efficacement.</p>
+                        
+                        <button class="btn-yellow" onclick="showScreen('signup')">
+                            Inscris-toi Ici
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        
+                        <div class="text-center" style="margin: 1rem 0;">
+                            <span class="text-white">Déjà inscrit(e) ? </span>
+                            <a class="text-yellow text-bold" onclick="showScreen('login')" style="cursor: pointer;">Connexion</a>
+                        </div>
+                        
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="terms">
+                            <label for="terms" class="checkbox-label">J'ai lu et j'accepte les conditions générales.</label>
+                        </div>
+                    </div>
                 </div>
-                <div style="padding: 1.5rem; margin-top: -33px;">
-                    <h2 class="text-white" style="font-size: 28px; font-weight: bold; margin-bottom: 0.5rem;">TON SUIVI PERSO</h2>
-                    <h2 class="text-white" style="font-size: 28px; font-weight: bold; margin-bottom: 1rem;">EN UNE SEULE APP.</h2>
-                    <p class="text-gray" style="margin-bottom: 1.5rem;">Suis ton évolution et atteints les objectifs efficacement.</p>
+            </div>
+            
+            <!-- Login Screen -->
+            <div id="login" class="screen">
+                <div class="screen-content" style="padding: 0;">
+                    <img src="images/IMG_2751.png" style="width: 100%; height: 491px; object-fit: cover;" alt="Training">
                     
-                    <button class="btn-yellow" onclick="showScreen('signup')">
-                        Inscris-toi Ici
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                    <div style="padding: 1.5rem; margin-top: -24px;">
+                        <label class="form-label">Adresse mail</label>
+                        <input type="email" class="form-input" placeholder="email@exemple.com">
+                        
+                        <label class="form-label">Mot de passe</label>
+                        <input type="password" class="form-input" placeholder="••••••••">
+                        
+                        <div class="text-center" style="margin: 1.5rem 0;">
+                            <span class="text-white">Tu n'as pas encore de compte ? </span>
+                            <a class="text-yellow text-bold" onclick="showScreen('signup')" style="cursor: pointer;">inscription</a>
+                        </div>
+                        
+                        <button class="btn-yellow" onclick="showScreen('member-area')">Connexion</button>
+                        
+                        <div class="social-buttons">
+                            <button class="social-btn"><i class="fab fa-apple"></i></button>
+                            <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                            <button class="social-btn"><i class="fab fa-google"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Signup Screen - Step 1 -->
+            <div id="signup" class="screen">
+                <div class="screen-content">
+                    <div class="signup-progress">
+                        <div class="progress-step active">1</div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step">2</div>
+                    </div>
                     
-                    <div class="text-center" style="margin: 1rem 0;">
+                    <h2 class="text-yellow text-center" style="font-size: 32px; font-weight: bold; margin-bottom: 1rem;">Inscription</h2>
+                    <p class="text-gray text-center" style="margin-bottom: 2rem; font-size: 14px;">Étape 1/2 : Informations de compte</p>
+                    
+                    <label class="form-label">Nom</label>
+                    <input type="text" class="form-input" id="lastName" placeholder="Nom">
+                    
+                    <label class="form-label">Prénom</label>
+                    <input type="text" class="form-input" id="firstName" placeholder="Prénom">
+                    
+                    <label class="form-label">Adresse mail</label>
+                    <input type="email" class="form-input" id="email" placeholder="email@exemple.com">
+                    
+                    <label class="form-label">Mot de passe</label>
+                    <input type="password" class="form-input" id="password" placeholder="••••••••">
+                    
+                    <div class="text-center" style="margin: 1.5rem 0;">
                         <span class="text-white">Déjà inscrit(e) ? </span>
                         <a class="text-yellow text-bold" onclick="showScreen('login')" style="cursor: pointer;">Connexion</a>
                     </div>
                     
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="terms">
-                        <label for="terms" class="checkbox-label">J'ai lu et j'accepte les conditions générales.</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Login Screen -->
-        <div id="login" class="screen">
-            <div class="screen-content" style="padding: 0;">
-                <img src="images/IMG_2751.png" style="width: 100%; height: 491px; object-fit: cover;" alt="Training">
-                
-                <div style="padding: 1.5rem; margin-top: -24px;">
-                    <label class="form-label">Adresse mail</label>
-                    <input type="email" class="form-input" placeholder="email@exemple.com">
-                    
-                    <label class="form-label">Mot de passe</label>
-                    <input type="password" class="form-input" placeholder="••••••••">
-                    
-                    <div class="text-center" style="margin: 1.5rem 0;">
-                        <span class="text-white">Tu n'as pas encore de compte ? </span>
-                        <a class="text-yellow text-bold" onclick="showScreen('signup')" style="cursor: pointer;">inscription</a>
-                    </div>
-                    
-                    <button class="btn-yellow" onclick="showScreen('member-area')">Connexion</button>
+                    <button class="btn-yellow" onclick="proceedToProfile()">
+                        Suivant
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                     
                     <div class="social-buttons">
                         <button class="social-btn"><i class="fab fa-apple"></i></button>
@@ -82,239 +126,301 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Signup Screen - Step 1 -->
-        <div id="signup" class="screen">
-            <div class="screen-content">
-                <div class="signup-progress">
-                    <div class="progress-step active">1</div>
-                    <div class="progress-line"></div>
-                    <div class="progress-step">2</div>
-                </div>
-                
-                <h2 class="text-yellow text-center" style="font-size: 32px; font-weight: bold; margin-bottom: 1rem;">Inscription</h2>
-                <p class="text-gray text-center" style="margin-bottom: 2rem; font-size: 14px;">Étape 1/2 : Informations de compte</p>
-                
-                <label class="form-label">Nom</label>
-                <input type="text" class="form-input" id="lastName" placeholder="Nom">
-                
-                <label class="form-label">Prénom</label>
-                <input type="text" class="form-input" id="firstName" placeholder="Prénom">
-                
-                <label class="form-label">Adresse mail</label>
-                <input type="email" class="form-input" id="email" placeholder="email@exemple.com">
-                
-                <label class="form-label">Mot de passe</label>
-                <input type="password" class="form-input" id="password" placeholder="••••••••">
-                
-                <div class="text-center" style="margin: 1.5rem 0;">
-                    <span class="text-white">Déjà inscrit(e) ? </span>
-                    <a class="text-yellow text-bold" onclick="showScreen('login')" style="cursor: pointer;">Connexion</a>
-                </div>
-                
-                <button class="btn-yellow" onclick="showScreen('signup-profile')">
-                    Suivant
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-                
-                <div class="social-buttons">
-                    <button class="social-btn"><i class="fab fa-apple"></i></button>
-                    <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
-                    <button class="social-btn"><i class="fab fa-google"></i></button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Signup Screen - Step 2 (Profile) -->
-        <div id="signup-profile" class="screen">
-            <div class="screen-content">
-                <div class="signup-progress">
-                    <div class="progress-step completed">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="progress-line active"></div>
-                    <div class="progress-step active">2</div>
-                </div>
-                
-                <h2 class="text-yellow text-center" style="font-size: 32px; font-weight: bold; margin-bottom: 1rem;">Ton Profil</h2>
-                <p class="text-gray text-center" style="margin-bottom: 2rem; font-size: 14px;">Étape 2/2 : Informations personnelles</p>
-                
-                <div class="form-row">
-                    <div class="form-col">
-                        <label class="form-label">Taille (cm)</label>
-                        <input type="number" class="form-input" id="height" placeholder="175">
-                    </div>
-                    <div class="form-col">
-                        <label class="form-label">Poids (kg)</label>
-                        <input type="number" class="form-input" id="weight" placeholder="70">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-col">
-                        <label class="form-label">Âge</label>
-                        <input type="number" class="form-input" id="age" placeholder="25">
-                    </div>
-                    <div class="form-col">
-                        <label class="form-label">Sexe</label>
-                        <select class="form-input form-select" id="gender">
-                            <option value="">Sélectionner</option>
-                            <option value="homme">Homme</option>
-                            <option value="femme">Femme</option>
-                            <option value="autre">Autre</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <label class="form-label">Objectif</label>
-                <div class="goal-selector">
-                    <label class="goal-option">
-                        <input type="radio" name="goal" value="masse">
-                        <div class="goal-card">
-                            <i class="fas fa-dumbbell"></i>
-                            <span>Prise de masse</span>
+            
+            <!-- Signup Screen - Step 2 (Profile) -->
+            <div id="signup-profile" class="screen">
+                <div class="screen-content">
+                    <div class="signup-progress">
+                        <div class="progress-step completed">
+                            <i class="fas fa-check"></i>
                         </div>
-                    </label>
-                    <label class="goal-option">
-                        <input type="radio" name="goal" value="seche">
-                        <div class="goal-card">
-                            <i class="fas fa-fire"></i>
-                            <span>Sèche</span>
+                        <div class="progress-line active"></div>
+                        <div class="progress-step active">2</div>
+                    </div>
+                    
+                    <h2 class="text-yellow text-center" style="font-size: 32px; font-weight: bold; margin-bottom: 1rem;">Ton Profil</h2>
+                    <p class="text-gray text-center" style="margin-bottom: 2rem; font-size: 14px;">Étape 2/2 : Informations personnelles</p>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label class="form-label">Taille (cm)</label>
+                            <input type="number" class="form-input" id="height" placeholder="175">
                         </div>
-                    </label>
-                    <label class="goal-option">
-                        <input type="radio" name="goal" value="forme">
-                        <div class="goal-card">
-                            <i class="fas fa-heart"></i>
-                            <span>Remise en forme</span>
+                        <div class="form-col">
+                            <label class="form-label">Poids (kg)</label>
+                            <input type="number" class="form-input" id="weight" placeholder="70">
                         </div>
-                    </label>
-                </div>
-                
-                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                    <button class="btn-secondary" onclick="showScreen('signup')">
-                        <i class="fas fa-arrow-left"></i>
-                        Retour
-                    </button>
-                    <button class="btn-yellow" style="flex: 1;" onclick="completeSignup()">
-                        Terminer l'inscription
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Member Welcome -->
-        <div id="member-area" class="screen">
-            <div style="height: 100%; display: flex; align-items: center; justify-content: center; padding: 2rem;">
-                <h1 class="text-yellow text-center" style="font-size: 36px; font-weight: bold; line-height: 1.3;">
-                    Bienvenue Sur Votre<br>Espace Membre !
-                </h1>
-            </div>
-        </div>
-        
-        <!-- Home Screen -->
-        <div id="home" class="screen">
-            <div class="screen-content">
-                <div class="profile-header">
-                    <img src="images/DSC_0392.JPG" class="profile-pic" alt="Profile">
-                    <span class="profile-name">John Doe</span>
-                </div>
-                
-                <h3 class="section-title">Ton Programme Du Jour</h3>
-                
-                <div class="workout-card">
-                    <img src="images/DSC_0435.JPG" alt="Workout">
-                    <div class="workout-overlay">
-                        <div class="workout-text">Plus Fort après<br>chaque répétition.</div>
-                        <button class="start-btn-small" onclick="showScreen('exercise-header-screen')">
-                            Commencer
-                            <i class="fas fa-play"></i>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label class="form-label">Âge</label>
+                            <input type="number" class="form-input" id="age" placeholder="25">
+                        </div>
+                        <div class="form-col">
+                            <label class="form-label">Sexe</label>
+                            <select class="form-input form-select" id="gender">
+                                <option value="">Sélectionner</option>
+                                <option value="homme">Homme</option>
+                                <option value="femme">Femme</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <label class="form-label">Objectif</label>
+                    <div class="goal-selector">
+                        <label class="goal-option">
+                            <input type="radio" name="goal" value="masse">
+                            <div class="goal-card">
+                                <i class="fas fa-dumbbell"></i>
+                                <span>Prise de masse</span>
+                            </div>
+                        </label>
+                        <label class="goal-option">
+                            <input type="radio" name="goal" value="seche">
+                            <div class="goal-card">
+                                <i class="fas fa-fire"></i>
+                                <span>Sèche</span>
+                            </div>
+                        </label>
+                        <label class="goal-option">
+                            <input type="radio" name="goal" value="forme">
+                            <div class="goal-card">
+                                <i class="fas fa-heart"></i>
+                                <span>Remise en forme</span>
+                            </div>
+                        </label>
+                        <label class="goal-option">
+                            <input type="radio" name="goal" value="competition">
+                            <div class="goal-card">
+                                <i class="fas fa-medal"></i>
+                                <span>Compétition</span>
+                            </div>
+                        </label>
+                        <label class="goal-option">
+                            <input type="radio" name="goal" value="autres">
+                            <div class="goal-card">
+                                <i class="fas fa-question"></i>
+                                <span>Autres</span>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <button class="btn-secondary" onclick="showScreen('signup')">
+                            <i class="fas fa-arrow-left"></i>
+                            Retour
+                        </button>
+                        <button class="btn-yellow" style="flex: 1;" onclick="completeSignup()">
+                            Terminer l'inscription
                         </button>
                     </div>
                 </div>
-                
+            </div>
+            
+            <!-- Member Welcome -->
+            <div id="member-area" class="screen">
+                <div style="height: 100%; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+                    <h1 class="text-yellow text-center" style="font-size: 36px; font-weight: bold; line-height: 1.3;">
+                        Bienvenue Sur Votre<br>Espace Membre !
+                    </h1>
+                </div>
+            </div>
+            
+            <!-- Home Screen -->
+            <div id="home" class="screen">
+                <div class="screen-content">
+                    <div class="profile-header">
+                        <img src="images/DSC_0392.JPG" class="profile-pic" alt="Profile">
+                        <span class="profile-name">John Doe</span>
+                    </div>
+                    
+                    <h3 class="section-title">Ton Programme Du Jour</h3>
+                    
+                    <div class="workout-card">
+                        <img src="images/DSC_0435.JPG" alt="Workout">
+                        <div class="workout-overlay">
+                            <div class="workout-text">Plus Fort après<br>chaque répétition.</div>
+                            <button class="start-btn-small" onclick="showScreen('workout-session')">
+                                Commencer
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 1px solid #333; padding-top: 1.5rem;">
+                        <h3 class="section-title">Historique Des Séances</h3>
+                        
+                        <div class="workout-grid">
+                            <div class="workout-grid-item">
+                                <img src="images/IMG_2743.png" alt="Workout">
+                                <div class="duration-badge">
+                                    <i class="far fa-clock"></i> 29 min
+                                </div>
+                                <div class="workout-label">Renforcement</div>
+                                <div class="workout-date">10/11</div>   
+                            </div>
+                            <div class="workout-grid-item">
+                                <img src="images/IMG_3176.png" alt="Workout">
+                                <div class="duration-badge">
+                                    <i class="far fa-clock"></i> 24 min
+                                </div>
+                                <div class="workout-label">Gym</div>
+                                <div class="workout-date">09/11</div>
+                            </div>
+                        </div>
+                    </div>
+
                 <div style="border-top: 1px solid #333; padding-top: 1.5rem;">
-                    <h3 class="section-title">Historique Des Séances</h3>
+                    <h3 class="section-title">Liste Des Exercices</h3>
                     
                     <div class="workout-grid">
                         <div class="workout-grid-item">
                             <img src="images/IMG_2743.png" alt="Workout">
-                            <div class="duration-badge">
-                                <i class="far fa-clock"></i> 29 min
-                            </div>
-                            <div class="workout-label">Cardio</div>
-                            <div class="workout-date">10/11</div>
+                            <div class="workout-label">Renforcement</div>  
                         </div>
                         <div class="workout-grid-item">
                             <img src="images/IMG_3176.png" alt="Workout">
-                            <div class="duration-badge">
-                                <i class="far fa-clock"></i> 24 min
-                            </div>
-                            <div class="workout-label">Gym</div>
-                            <div class="workout-date">09/11</div>
+                            <div class="workout-label">Cardio</div>
+                        </div>
+                        <div class="workout-grid-item">
+                            <img src="images/IMG_3176.png" alt="Workout">
+                            <div class="workout-label">Haltérophilie</div>
+                        </div>
+                        <div class="workout-grid-item">
+                            <img src="images/IMG_3176.png" alt="Workout">
+                            <div class="workout-label">Autres</div>
                         </div>
                     </div>
                 </div>
+                </div>
+            </div>
+                
+                <div class="bottom-nav">
+                    <button class="nav-item active" onclick="showScreen('home')">
+                        <i class="fas fa-home"></i>
+                        <span>Accueil</span>
+                    </button>
+                    <button class="nav-item" onclick="showScreen('calendar')">
+                        <i class="far fa-calendar"></i>
+                        <span>Calendrier</span>
+                    </button>
+                    <button class="nav-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Statistiques</span>
+                    </button>
+                    <button class="nav-item">
+                        <i class="far fa-comment"></i>
+                        <span>Messagerie</span>
+                    </button>
+                    <button class="nav-item">
+                        <i class="far fa-user"></i>
+                        <span>Compte</span>
+                    </button>
+                </div>
             </div>
             
-            <div class="bottom-nav">
-                <button class="nav-item active" onclick="showScreen('home')">
-                    <i class="fas fa-home"></i>
-                    <span>Accueil</span>
-                </button>
-                <button class="nav-item" onclick="showScreen('calendar')">
-                    <i class="far fa-calendar"></i>
-                    <span>Calendrier</span>
-                </button>
-                <button class="nav-item">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>Statistiques</span>
-                </button>
-                <button class="nav-item">
-                    <i class="far fa-comment"></i>
-                    <span>Messagerie</span>
-                </button>
-                <button class="nav-item">
-                    <i class="far fa-user"></i>
-                    <span>Compte</span>
-                </button>
+            <!-- Calendar Screen -->
+            <div id="calendar" class="screen">
+                <div class="screen-content">
+                    <div class="profile-header">
+                        <img src="images/DSC_0392.JPG" class="profile-pic" alt="Profile">
+                        <span class="profile-name">John Doe</span>
+                    </div>
+                    
+                    <div class="workout-card" style="height: 150px;">
+                        <img src="images/IMG_2743.png" alt="Workout" style="height: 150px;">
+                        <div class="workout-overlay" style="justify-content: center; align-items: center;">
+                            <div style="text-align: center;">
+                                <div style="color: #ffd700; font-size: 14px; margin-bottom: 0.5rem;">
+                                    <i class="far fa-clock"></i> 30 min
+                                </div>
+                                <div style="color: white; font-weight: bold;">Renforcement</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-yellow" onclick="showScreen('workout-session')">
+                        Commencer
+                        <i class="fas fa-play"></i>
+                    </button>
+                    
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <button class="calendar-nav" id="prevMonthBtn">&lt;</button>
+                            <div class="calendar-selects">
+                                <select class="calendar-select" id="monthSelect"></select>
+                                <select class="calendar-select" id="yearSelect"></select>
+                            </div>
+                            <button class="calendar-nav" id="nextMonthBtn">&gt;</button>
+                        </div>
+                        
+                        <div class="calendar-today" id="calendarToday">Aujourd'hui</div>
+                        
+                        <div class="calendar-grid" id="calendarGrid">
+                            <!-- Les jours seront générés dynamiquement en JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bottom-nav">
+                    <button class="nav-item" onclick="showScreen('home')">
+                        <i class="fas fa-home"></i>
+                        <span>Accueil</span>
+                    </button>
+                    <button class="nav-item active" onclick="showScreen('calendar')">
+                        <i class="far fa-calendar"></i>
+                        <span>Calendrier</span>
+                    </button>
+                    <button class="nav-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Statistiques</span>
+                    </button>
+                    <button class="nav-item">
+                        <i class="far fa-comment"></i>
+                        <span>Messagerie</span>
+                    </button>
+                    <button class="nav-item">
+                        <i class="far fa-user"></i>
+                        <span>Compte</span>
+                    </button>
+                </div>
             </div>
-        </div>
-
-
-        <div class="phone-container">
-            <div class="notch"></div>
             
-            <div id="exercise-header-screen" class="screen">
+            <!-- Workout Session Screen -->
+            <div id="workout-session" class="screen">
                 <!-- Header -->
-                <div class="exercise-header-screen">
-                    <button class="back-btn" onclick="showScreen('exercise')">
+                <div class="exercise-header">
+                    <button class="back-btn" onclick="showScreen('home')">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <div class="exercise-title">Séance Cardio</div>
-                    <button class="close-btn" onclick="showScreen('exercise')">
+                    <div class="exercise-title">Renforcement Musculaire</div>
+                    <button class="close-btn" onclick="confirmExit()">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
                 
                 <!-- Video Section -->
                 <div class="video-container">
-                    <img src="images/IMG_2743.png" class="video-placeholder" alt="Exercise">
+                    <video class="workout-video" id="workoutVideo" playsinline>
+                        <source src="videos/exercise1.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
                     <div class="video-overlay">
                         <div class="timer-display">
                             <div class="timer-label">Temps Restant</div>
-                            <div class="timer-value" id="mainTimer">00:45</div>
+                            <div class="timer-value" id="mainTimer">00:30</div>
                         </div>
                         
                         <div class="exercise-info">
                             <div class="info-item">
-                                <div class="info-label">Séries</div>
-                                <div class="info-value"><span id="currentSet">1</span>/4</div>
+                                <div class="info-label">Exercice</div>
+                                <div class="info-value"><span id="currentExercise">1</span>/2</div>
                             </div>
                             <div class="info-item">
-                                <div class="info-label">Répétitions</div>
-                                <div class="info-value">12</div>
+                                <div class="info-label">Séries</div>
+                                <div class="info-value"><span id="currentSet">1</span>/3</div>
                             </div>
                             <div class="info-item">
                                 <div class="info-label">Calories</div>
@@ -326,8 +432,8 @@
                 
                 <!-- Controls Section -->
                 <div class="controls-section">
-                    <div class="exercise-name" id="exerciseName">Cardio</div>
-                    <div class="exercise-details">45 secondes • Intensité élevée</div>
+                    <div class="exercise-name" id="exerciseName">Squats</div>
+                    <div class="exercise-details" id="exerciseDetails">30 secondes • Intensité modérée</div>
                     
                     <div class="progress-container">
                         <div class="progress-info">
@@ -353,9 +459,9 @@
                 <!-- Rest Screen -->
                 <div class="rest-screen" id="restScreen">
                     <div class="rest-title">Repos</div>
-                    <div class="rest-timer" id="restTimer">30</div>
+                    <div class="rest-timer" id="restTimer">15</div>
                     <div class="next-exercise">Prochain exercice</div>
-                    <div class="next-exercise-name" id="nextExerciseName">Mountain Climbers</div>
+                    <div class="next-exercise-name" id="nextExerciseName">Pompes</div>
                     <button class="skip-rest-btn" onclick="skipRest()">Passer le repos</button>
                 </div>
                 
@@ -363,23 +469,23 @@
                 <div class="completed-screen" id="completedScreen">
                     <i class="fas fa-trophy trophy-icon"></i>
                     <div class="completed-title">Séance Terminée !</div>
-                    <div class="completed-subtitle">Bien joué 💪</div>
+                    <div class="completed-subtitle">Excellent travail 💪</div>
                     
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-value" id="totalTime">29:45</div>
+                            <div class="stat-value" id="totalTime">0:00</div>
                             <div class="stat-label">Durée totale</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value" id="totalCalories">245</div>
+                            <div class="stat-value" id="totalCalories">0</div>
                             <div class="stat-label">Calories brûlées</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value" id="exercisesCompleted">12</div>
+                            <div class="stat-value" id="exercisesCompleted">2</div>
                             <div class="stat-label">Exercices</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value" id="setsCompleted">48</div>
+                            <div class="stat-value" id="setsCompleted">6</div>
                             <div class="stat-label">Séries</div>
                         </div>
                     </div>
@@ -387,116 +493,7 @@
                     <button class="btn-yellow" onclick="finishWorkout()">Terminer</button>
                 </div>
             </div>
-        </div>
-        
-    </div>
-        
-        <!-- Calendar Screen -->
-        <div id="calendar" class="screen">
-            <div class="screen-content">
-                <div class="profile-header">
-                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=100" class="profile-pic" alt="Profile">
-                    <span class="profile-name">John Doe</span>
-                </div>
-                
-                <div class="workout-card" style="height: 150px;">
-                    <img src="images/IMG_2743.png" alt="Workout" style="height: 150px;">
-                    <div class="workout-overlay" style="justify-content: center; align-items: center;">
-                        <div style="text-align: center;">
-                            <div style="color: #ffd700; font-size: 14px; margin-bottom: 0.5rem;">
-                                <i class="far fa-clock"></i> 30 min
-                            </div>
-                            <div style="color: white; font-weight: bold;">Gym</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <button class="btn-yellow" onclick="showScreen('exercise')">
-                    Commencer
-                    <i class="fas fa-play"></i>
-                </button>
-                
-                <div class="calendar-container">
-                    <div class="calendar-header">
-                        <button class="calendar-nav">&lt;</button>
-                        <div class="calendar-selects">
-                            <select class="calendar-select">
-                                <option>Sep</option>
-                            </select>
-                            <select class="calendar-select">
-                                <option>2025</option>
-                            </select>
-                        </div>
-                        <button class="calendar-nav">&gt;</button>
-                    </div>
-                    
-                    <div class="calendar-today">Aujourd'hui, 9 Septembre 2025</div>
-                    
-                    <div class="calendar-grid">
-                        <div class="calendar-day-label">Su</div>
-                        <div class="calendar-day-label">Mo</div>
-                        <div class="calendar-day-label">Tu</div>
-                        <div class="calendar-day-label">We</div>
-                        <div class="calendar-day-label">Th</div>
-                        <div class="calendar-day-label">Fr</div>
-                        <div class="calendar-day-label">Sa</div>
-                        
-                        <div class="calendar-day">1</div>
-                        <div class="calendar-day">2</div>
-                        <div class="calendar-day">3</div>
-                        <div class="calendar-day">4</div>
-                        <div class="calendar-day">5</div>
-                        <div class="calendar-day">6</div>
-                        <div class="calendar-day">7</div>
-                        <div class="calendar-day">8</div>
-                        <div class="calendar-day selected" onclick="selectDay(this)">9</div>
-                        <div class="calendar-day" onclick="selectDay(this)">10</div>
-                        <div class="calendar-day" onclick="selectDay(this)">11</div>
-                        <div class="calendar-day" onclick="selectDay(this)">12</div>
-                        <div class="calendar-day" onclick="selectDay(this)">13</div>
-                        <div class="calendar-day" onclick="selectDay(this)">14</div>
-                        <div class="calendar-day" onclick="selectDay(this)">15</div>
-                        <div class="calendar-day" onclick="selectDay(this)">16</div>
-                        <div class="calendar-day" onclick="selectDay(this)">17</div>
-                        <div class="calendar-day" onclick="selectDay(this)">18</div>
-                        <div class="calendar-day" onclick="selectDay(this)">19</div>
-                        <div class="calendar-day" onclick="selectDay(this)">20</div>
-                        <div class="calendar-day" onclick="selectDay(this)">21</div>
-                        <div class="calendar-day" onclick="selectDay(this)">22</div>
-                        <div class="calendar-day" onclick="selectDay(this)">23</div>
-                        <div class="calendar-day" onclick="selectDay(this)">24</div>
-                        <div class="calendar-day" onclick="selectDay(this)">25</div>
-                        <div class="calendar-day" onclick="selectDay(this)">26</div>
-                        <div class="calendar-day" onclick="selectDay(this)">27</div>
-                        <div class="calendar-day" onclick="selectDay(this)">28</div>
-                        <div class="calendar-day" onclick="selectDay(this)">29</div>
-                        <div class="calendar-day" onclick="selectDay(this)">30</div>
-                    </div>
-                </div>
-            </div>
             
-            <div class="bottom-nav">
-                <button class="nav-item" onclick="showScreen('home')">
-                    <i class="fas fa-home"></i>
-                    <span>Accueil</span>
-                </button>
-                <button class="nav-item active" onclick="showScreen('calendar')">
-                    <i class="far fa-calendar"></i>
-                    <span>Calendrier</span>
-                </button>
-                <button class="nav-item">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>Statistiques</span>
-                </button>
-                <button class="nav-item">
-                    <i class="far fa-comment"></i>
-                    <span>Messagerie</span>
-                </button>
-                <button class="nav-item">
-                    <i class="far fa-user"></i>
-                    <span>Compte</span>
-                </button>
-            </div>
         </div>
     </div>
     
